@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://fonts.googleapis.com/css?family=ABeeZee' rel='stylesheet'>
+    <title>Belajar Array dan Objek Javascript</title>
+    <style>
+        body {
+            background-color: #ecf0f1;
+            font-family: 'ABeeZee';
+        }
+        .box {
+            box-shadow: 5px 10px 20px 10px gray;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 3px 15px 3px 15px;
+            margin: 20px 10% 0 10%;
+            width: 80%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <h3>Soal 1</h3>
+        <p id="soal1"></p>
+    </div>
+    <div class="box">
+        <h3>Soal 2</h3>
+        <p id="soal2"></p>
+    </div>
+    <div class="box">
+        <h3>Soal 3</h3>
+        <p id="soal3"></p>
+    </div>
+
+    <script>
+        // Start of Soal 1
+        var daftarBuah = ["2. Apel", "5. Jeruk", "3. Anggur", "4. Semangka", "1. Mangga"];
+        daftarBuah = daftarBuah.sort();
+        var showDaftarBuah = "";
+        daftarBuah.forEach((item) => {
+            showDaftarBuah+=`${item}<br/>`;
+        });
+        document.getElementById("soal1").innerHTML = `${showDaftarBuah}`;
+        // End of Soal 1
+
+        // Start of Soal 2
+        var kalimat="saya sangat senang belajar javascript";
+        var arrayKata = kalimat.split(" ");
+        document.getElementById("soal2").innerHTML = `[ ${this.arrayKata} ]`;
+        // End of Soal 2
+
+        // Start of Soal 3
+        function Buah(nama, warna, adaBiji, harga){
+            
+            this.nama = nama;
+            this.warna = warna;
+            this.adaBiji = adaBiji;
+            this.harga = harga;
+
+            this.getBuahProperty = function(){
+                return `Nama : ${this.nama} <br/> 
+                        Warna : ${this.warna} <br/> 
+                        Ada Biji : ${this.adaBiji} <br/> 
+                        Harga : Rp. ${this.harga}`
+            }
+
+            this.showProperty = function(){
+                document.getElementById("soal3").innerHTML = this.getBuahProperty();
+            }
+        }
+
+        var buah1 = new Buah("Strawberry", "Merah", "Tidak", "9000")
+        var buah2 = new Buah("Jeruk", "Oranye", "Ada", "8000")
+        var buah3 = new Buah("Semangka", "Hijau & Merah", "Ada", "10000");
+        var buah4 = new Buah("Pisang", "Kuning", "Tidak", "5000");
+
+        buah1.showProperty();
+        // End of Soal 3
+
+    </script>
+
+</body>
+</html>
